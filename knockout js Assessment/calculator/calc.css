@@ -1,0 +1,56 @@
+.calculator-display {
+    text-align: right; 
+  }
+  
+.container {
+    background-color:white;
+    width: 180px;
+    height: 280px;
+    border-style: solid;
+    border-width: 2px;
+    padding: 5px;
+    text-align: center;
+}
+
+.btnNum {
+    background-color: white;
+    color: black;
+    font: size 14;
+    width: 30px;
+    height: 30px;
+}
+
+.btnOper {
+    background-color: white;
+    color: black;
+    font: size 14;
+    width: 30px;
+    height: 30px;
+}
+
+
+
+.btnEval {
+    background-color: white;
+    color: black;
+    font: size 14;
+    width: 30px;
+    ;
+    height: 30px;
+}
+
+.btnClr{
+    background-color: white;
+    color: black;
+    font: size 14;
+    width: 30px;
+    height: 30px;
+}
+
+.btnDel {
+    background-color: white;
+    color: black;
+    font: size 14;
+    width: 30px;
+    height: 30px;
+}

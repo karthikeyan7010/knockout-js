@@ -1,0 +1,120 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/jquery-ui.css" />
+    <link rel="stylesheet" href="css/image.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+    <div id="heads" style="margin-left: 450px;">
+       <u> <h1 style="color: blue">Plp and Pdp</h1></u><br>
+
+        <select
+            data-bind="options:rateOption ,optionsCaption:'Choose Filter',optionsText:'text',optionsValue:'id',value:first,event:{ change: Bass} "></select>
+        <select
+            data-bind="options:sortOption ,optionsCaption:'Select Sort',optionsText:'text',optionsValue:'id',value:second, event:{ change: sort}"></select>
+    </div>
+
+    <div id="editDisplay" title="Product Description " style="display:none">
+
+        <div class="container" id="border">
+            <div class="row">
+                <div class="col-4">
+                    <img class="label1" data-bind="attr: { src: 'images/'+editor.image() }" width="200" height="200" />
+                </div>
+                <div class="col-8">
+                    <b>Product :<span data-bind="text:editor.productId(),"></span></b><br>
+                    <b>SKU :<span data-bind="text:editor.sku()"></span></b>
+                    <br>
+                    <br>
+                    <br>
+                    <b> Description:</b>
+                    <br>
+                    <p data-bind="text:editor.description()"></p>
+                    <br>
+                    <div style="background-color: lightslategrey;">
+                        
+                    </div>
+
+                    <button type="button" class="btn btn-primary">Delivery</button>
+                    <button type="button" class="btn btn-light">PickUp</button>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="label" data-bind="foreach:paginated">
+        <ul>
+            <div class="container" id="border">
+                <div class="row">
+                    <div class="col-2">
+                        <img class="label1"
+                            data-bind="attr: { src: 'images/'+$data.image() },click: function() { $parent.editItem($data)}"
+                            width="100" height="100" />
+                        <button type="button" >Delivery</button>
+                        <button type="button" >PickUp</button>
+                    </div>
+                    <div class="col-10">
+                        <b data-bind="click: function() { $parent.editItem($data)}">Product :<span
+                                data-bind="text:$data.productId,"></span></b><br>
+                        <b>SKU :<span data-bind="text:$data.sku"></span></b><br><br>
+                       
+
+
+                        <button type="button" data-bind="click: $parent.minus">-</button>
+                        <input type="text" style="width: 70px;" type="number" value="500" min="1" max="1000" step="1"
+                            data-bind="value: input" />
+                        <button type="button" data-bind="click: $parent.plus">+</button>
+
+                        &nbsp &nbsp 
+                        <br>
+                        &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp &nbsp &nbsp &nbsp &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+                        &nbsp &nbsp
+                        Rs:<span data-bind="text:multiple"></span>/<span data-bind="text:input"></span>product
+
+                    </div>
+
+                </div>
+                <div class="row" id="last">
+                    <div class="col-sm">
+                       
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+        </ul>
+    </div>
+
+
+
+
+
+    <div style="background-color: teal;">
+        <div style="margin-left: 530px;" class="pager">
+            <a href="#" class="previous" data-bind="click: previous, visible: hasPrevious"><span id="previous">Previous</span></a>
+            <span style="color: darkorange;" class="current" data-bind="text: $root.printPage()"></span>
+            <a href="#" class="next" data-bind="click: next, visible: hasNext"><span id="next">Next</span></a>
+        </div>
+    </div>
+
+
+    <script src="script/jquery.js"></script>
+    <script src="script/bootstrap.min.js"></script>
+    <script src="script/jquery-ui.js"></script>
+
+
+    <script src="script/knockout-3.5.1.js"></script>
+    <script src="script/image.js"></script>
+</body>
+
+</html>

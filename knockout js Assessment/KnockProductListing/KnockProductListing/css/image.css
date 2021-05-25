@@ -1,0 +1,21 @@
+.label1 {
+    background-color: lightblue;
+
+}
+
+#border {
+    border-style: solid;
+    border-width: thin;
+}
+
+#last {
+    background-color: lightgray;
+}
+
+#previous {
+    color: blue;
+}
+
+#next {
+    color: red;
+}

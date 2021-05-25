@@ -1,0 +1,69 @@
+<html>
+    <head>
+        <title>Create an order form</title>
+    </head>
+    <body>
+
+
+<u><h2 style="text-align: center;color: red">Shopping List</h2><br><br></u>
+
+
+         <table width='100%'>
+            <tbody data-bind="foreach:row">
+                <tr>
+                    <td>
+                <input type="number" data-bind="value:id" placeholder="Product SKU"/>
+                <input type="text" data-bind="value:name" placeholder="Product Name"/>
+                <select data-bind="options:$parent.component ,optionsText:'options1',optionsValue:'options1',optionsCaption: 'Choose Component',value:selected "></select>
+                <input type="number" data-bind="value:quantity "placeholder="Quantity"/>
+                Availability:<label><input type="radio" attr : {name: id} value="Yes" data-bind="checked: radiovalue" />Yes</label>
+                <label><input type="radio" attr : {name: id} value="No" data-bind="checked: radiovalue" />No</label>
+                Discounts:<label><input type="checkbox" value="HDFC" data-bind="checked: checkedValue" />Hdfc</label>
+                <label><input type="checkbox" value="SBI" data-bind="checked: checkedValue" /> Sbi</div>
+                <label><input type="checkbox" value="MASTER CARD" data-bind="checked: checkedValue" /> Master Card</div><br>
+                <button data-bind="click:$parent.remove">X</button>
+        </td>
+    </tr>
+            </tbody>
+</table>
+<br><br>
+          <div style="margin-left: 150px;"> <button style="margin-left: 120px;background-color: orange;color: red;" data-bind="click:add">Add</button>
+            <button style="background-color: white;color: black" data-bind="click:join">Submit</button>
+            <button style="background-color: green;color: black" data-bind="click:clear">Reset</button>
+          
+<br><br>
+
+            <table id='Results' border='3'>
+                <thead id="body1">
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Category</th>
+                        <th>Quantity</th>
+                        <th>Availablity</th>
+                        <th>Discount</th>
+       
+                    </tr>
+                </thead>
+                <tbody data-bind="foreach: data1">
+                    <tr>
+                      <td data-bind="text:id"></td>
+                      <td data-bind="text:name"></td>
+                      <td data-bind="text:selected"></td>
+                      <td data-bind="text:quantity"></td>
+                      <td data-bind="text:radiovalue"></td>
+                      <td data-bind="text:checkedValue"></td>
+                    </tr>
+                   
+                </tbody>
+            </table>
+        </div> 
+      
+
+
+        <script src="script/jquery.js"></script>
+        <script src="script/knockout-3.5.1.js"></script>
+        <script src="script/jquery-ui.js"></script>
+        <script src="script/index.js"></script>
+    </body>
+</html>
